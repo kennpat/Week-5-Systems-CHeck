@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+restaurants = Restaurant.create([{name: 'Lakeshore Cafe', address: '111 Some Street', city: 'Storm Lake', state: 'IA', zip_code: '50588'}, 
+	{name: 'Pizza Hut', address: '111 Some Street', city: 'Storm Lake', state: 'IA', zip_code: '50588'}])

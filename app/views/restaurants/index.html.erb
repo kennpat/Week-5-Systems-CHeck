@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<h3>Good Eats!</h3>
+
+<a href="/restaurants/new"> Add a new restaurant</a>
+
+<h5>Check out some of these restaurants:</h5>
+
+<div>
+<ul>
+	<% @restaurants.each do |restaurant| %>
+		<li><%= restaurant.name %> <a href="/restaurants/<%restaurant.id %>">details</a></li>
+
+	<% end %>
+</ul>
+</div>
+

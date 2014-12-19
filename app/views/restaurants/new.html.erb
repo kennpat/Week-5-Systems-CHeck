@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<% if @restaurant.errors.any? %>
+	<ul>
+		<% @restaurant.errors.full_message.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<h3>Please add a new restaurant to our database!</h3>	
+
+<%= form_for @restaurant do |f| %>
+	<div>
+		<%= label_tag(:q, "Name") %>
+		<%= f.text_field(:name) %>
+	</div>
+	<div>
+		<%= label_tag(:q, "Address") %>
+		<%= f.text_field(:address) %>
+	</div>
+	<div>
+		<%= label_tag(:q, "City") %>
+		<%= f.text_field(:city) %>
+	</div>
+	<div>
+		<%= label_tag(:q, "State") %>
+		<%= f.text_field(:state) %>
+	</div>
+	<div>
+		<%= label_tag(:q, "Zip") %>
+		<%= f.text_field(:zip_code) %>
+	</div>
+	<div>
+		<%= label_tag(:q, "Description") %>
+		<%= f.text_field(:description) %>
+	</div>
+	<%= f.submit "Post" %>
+<% end %>
+
