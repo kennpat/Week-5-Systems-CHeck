@@ -12,5 +12,19 @@
 
 <div>Would you like to add a <a href="/restaurants/<%= @restaurant.id %>/reviews/new">review?</a></div>
 
-<div><a href="/restaurants"><h6>Back</h6></a></div>
+<div>
+	<% binding.pry %>
+	<h5>Current Reviews:</h5>
+	<ul>
+		<% @reviews.each do |review| %>
+		<li>
+			<%= review.rating %>
+			<%= review.body %>
+		</li>
+		<% end %> 
+	</ul>
 
+
+</div>
+
+<div><a href="/restaurants"><h6>Back</h6></a></div>

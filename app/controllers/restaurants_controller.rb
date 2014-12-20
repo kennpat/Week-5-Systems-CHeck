@@ -9,6 +9,7 @@ class RestaurantsController < ApplicationController
 	end
 
 	def create
+
 		@restaurant = Restaurant.new(rest_params)
 
 		if @restaurant.save
@@ -19,7 +20,11 @@ class RestaurantsController < ApplicationController
 	end
 
 	def show
+		
 		@restaurant = Restaurant.find_by(id: params[:id])
+
+		@reviews = Review.where(rest_id: @restaurant.id)
+		binding.pry
 	end
 
 	private
