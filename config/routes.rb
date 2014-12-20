@@ -53,10 +53,11 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
+  resources :reviews
   resources :restaurants do
+    resources :reviews
   end
-  
+
 end
 
 

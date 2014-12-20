@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<h5>Form to add a new review comment:</h5>
+<% binding.pry %>
+<% if @review.errors.any? %>
+	<ul>
+		<% @review.errors.full_message.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<h3>Please add a new restaurant to our database!</h3>	
+
+<%= form_for [@restaurant, @review] do |f| %>
+	<div>
+		<%= label_tag(:q, "Rating") %>
+		<%= f.text_field(:rating) %>
+	</div>
+	<div>
+		<%= label_tag(:q, "Description") %>
+		<%= f.text_field(:body) %>
+	</div>
+		<%= f.hidden_field :rest_id, :value => params["restaurant_id"] %>
+		<%= f.submit "Post" %>
+<% end %>

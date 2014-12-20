@@ -1,2 +1,16 @@
 <!DOCTYPE html>
 
+<h3><%= @restaurant.name %></h3>
+
+<div>
+	<h6>Address: <%= @restaurant.address %></h6>
+	<h6>City: <%= @restaurant.city %></h6>
+	<h6>State: <%= @restaurant.state %></h6>
+	<h6>zip: <%= @restaurant.zip_code %></h6>
+	<h6>Description: <%= @restaurant.description %></h6>
+</div>
+
+<div>Would you like to add a <a href="/restaurants/<%= @restaurant.id %>/reviews/new">review?</a></div>
+
+<div><a href="/restaurants"><h6>Back</h6></a></div>
+

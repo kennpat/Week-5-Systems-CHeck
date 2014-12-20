@@ -9,7 +9,7 @@
 <div>
 <ul>
 	<% @restaurants.each do |restaurant| %>
-		<li><%= restaurant.name %> <a href="/restaurants/<%restaurant.id %>">details</a></li>
+		<li><%= restaurant.name %> <a href="/restaurants/<%=restaurant.id %>">details</a></li>
 
 	<% end %>
 </ul>

@@ -19,17 +19,13 @@ class RestaurantsController < ApplicationController
 	end
 
 	def show
-		@restaurant = Restaurant.find_by(id_params)
+		@restaurant = Restaurant.find_by(id: params[:id])
 	end
 
 	private
 
 		def rest_params
 			params.require(:restaurant).permit(:name, :address, :city, :state, :zip_code, :description)
-		end
-
-		def id_params
-			params.require(:restaurant).permit(:id)
 		end
 
 end
